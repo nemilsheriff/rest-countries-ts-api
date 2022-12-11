@@ -15,5 +15,9 @@
       background: #fff;
       border-radius: 10px;
       color: red;
-      /* font-weight: 700; */
+}
+
+* {
+      --DarkBlue: hsl(209, 23%, 22%);
+      --VeryDarkBlue: hsl(207, 26%, 17%);
 }

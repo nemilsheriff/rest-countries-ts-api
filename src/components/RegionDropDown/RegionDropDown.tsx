@@ -1,11 +1,13 @@
 import { useState } from 'react'
 import './RegionDropDown.css'
+import { useTheme } from '../../hooks/useTheme';
 
 type RegionDropDownProps = {
       setUrl: React.Dispatch<React.SetStateAction<string>>
 }
 
 export const RegionDropDown = (props: RegionDropDownProps) => {
+      const { darkTheme } = useTheme();
       const [searchTerm, setSearchTerm] = useState<string>('');
 
       const updateSearchTerm = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -20,7 +22,7 @@ export const RegionDropDown = (props: RegionDropDownProps) => {
       }
 
       return (
-            <div className="region-drop-down">
+            <div className={darkTheme ? ("region-drop-down Dark") : ("region-drop-down")}>
                   <select
                         title="Region Drop Down"
                         name="region"

@@ -2,8 +2,18 @@
       width: 20rem;
       height: 24rem;
       background-color: white;
+      /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
       box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
       border-radius: 0.5rem;
+}
+
+.country.Dark {
+      background-color: var(--DarkBlue);
+}
+
+.country-details.Dark>h3,
+.country-details.Dark>p {
+      color: white;
 }
 
 img {
@@ -18,7 +28,6 @@ img {
 .country-details {
       margin: 2rem 0rem 2rem 1rem;
       display: inline-block;
-
 }
 
 .country-details>h3 {

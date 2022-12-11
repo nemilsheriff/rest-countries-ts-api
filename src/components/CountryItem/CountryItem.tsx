@@ -1,14 +1,16 @@
 import './CountryItem.css'
+import { useTheme } from '../../hooks/useTheme';
 
 type CountryItemProps = {
       country?: any
 }
 
 export const CountryItem = (props: CountryItemProps) => {
+      const { darkTheme } = useTheme();
       return (
-            <div className="country">
+            <div className={darkTheme ? ("country Dark") : ("country")}>
                   <img src={props.country.flags.png} alt='flag'></img>
-                  <div className="country-details">
+                  <div className={darkTheme ? ("country-details Dark") : ("country-details")}>
                         <h3>{props.country.name.official}</h3>
                         <p><b>Population:</b> {props.country.population.toLocaleString("en-US")}</p>
                         <p><b>Region:</b> {props.country.region}</p>

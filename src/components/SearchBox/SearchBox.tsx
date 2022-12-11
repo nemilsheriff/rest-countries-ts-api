@@ -1,11 +1,13 @@
 import { useState } from 'react';
-import './SearchBox.css'
+import './SearchBox.css';
+import { useTheme } from '../../hooks/useTheme';
 
 type SearchBoxProps = {
       setUrl: React.Dispatch<React.SetStateAction<string>>
 }
 
 export const SearchBox = (props: SearchBoxProps) => {
+      const { darkTheme } = useTheme();
       const [searchTerm, setSearchTerm] = useState<string>('');
 
       const updateSearchTerm = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -22,7 +24,7 @@ export const SearchBox = (props: SearchBoxProps) => {
       return (
             <label>
                   <input
-                        className='country-search'
+                        className={darkTheme ? ("country-search Dark") : ("country-search")}
                         placeholder="Search for a country..."
                         onChange={(e) => updateSearchTerm(e)}
                         value={searchTerm}

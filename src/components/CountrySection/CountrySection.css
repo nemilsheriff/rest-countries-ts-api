@@ -13,6 +13,10 @@
       align-items: center;
 }
 
+.country-section.Dark {
+      background-color: var(--VeryDarkBlue);
+}
+
 @media all and (min-width: 600px) {
       .country-section__search-plus-dropdown {
             /* outline: 1px solid red; */

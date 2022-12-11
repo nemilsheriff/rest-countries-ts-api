@@ -10,3 +10,24 @@
 figure {
       display: flex;
 }
+
+svg {
+      fill: var(--DarkBlue);
+}
+
+.theme__dark {
+      cursor: pointer;
+}
+
+.Heading.Dark {
+      background-color: var(--DarkBlue);
+}
+
+.Heading.Dark>h2,
+.Heading.Dark>.theme>.theme__dark>figure>p {
+      color: white;
+}
+
+.Heading.Dark>.theme>.theme__dark>figure>div>svg {
+      fill: white;
+}
