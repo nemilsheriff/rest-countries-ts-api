@@ -1,0 +1,25 @@
+.country {
+      width: 20rem;
+      background-color: white;
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      border-radius: 0.5rem;
+}
+
+img {
+      width: 20rem;
+      height: 13rem;
+      object-fit: fill;
+      border-top-left-radius: 0.5rem;
+      border-top-right-radius: 0.5rem;
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.country-details {
+      margin: 2rem 0rem 2rem 1rem;
+      display: inline-block;
+
+}
+
+.country-details>h3 {
+      margin-bottom: 1rem;
+}

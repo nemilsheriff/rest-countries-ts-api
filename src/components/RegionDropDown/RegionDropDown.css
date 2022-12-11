@@ -1,0 +1,10 @@
+select {
+      margin-top: 2rem;
+      background-color: white;
+      border: none;
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      padding: 1rem 1rem 1rem 1rem;
+      width: 50%;
+      background-position: right;
+      border-right: 16px solid transparent
+}

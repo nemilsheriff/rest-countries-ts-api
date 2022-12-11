@@ -1,0 +1,21 @@
+.country-search {
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      border: none;
+      padding: 1rem 1rem 1rem 2.5rem;
+      width: 100%;
+}
+
+label {
+      position: relative;
+}
+
+label:before {
+      content: "";
+      position: absolute;
+      left: 15px;
+      top: 0;
+      bottom: 0;
+      /* color: aqua; */
+      width: 15px;
+      background: url("data:image/svg+xml,%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20480%20480%22%3E%0A%20%20%20%20%3C%21--%21%20Font%20Awesome%20Pro%206.2.0%20by%20%40fontawesome%20-%20https%3A%2F%2Ffontawesome.com%20License%20-%20https%3A%2F%2Ffontawesome.com%2Flicense%20%28Commercial%20License%29%20Copyright%202022%20Fonticons%2C%20Inc.%20--%3E%0A%20%20%20%20%3Cpath%20fill%3D%22%23858585%22%20d%3D%22M416%20208c0%2045.9-14.9%2088.3-40%20122.7L502.6%20457.4c12.5%2012.5%2012.5%2032.8%200%2045.3s-32.8%2012.5-45.3%200L330.7%20376c-34.4%2025.2-76.8%2040-122.7%2040C93.1%20416%200%20322.9%200%20208S93.1%200%20208%200S416%2093.1%20416%20208zM208%20352c79.5%200%20144-64.5%20144-144s-64.5-144-144-144S64%20128.5%2064%20208s64.5%20144%20144%20144z%22%2F%3E%0A%20%20%20%20%3C%2Fsvg%3E") center / contain no-repeat;
+}

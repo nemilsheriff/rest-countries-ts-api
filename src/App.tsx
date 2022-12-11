@@ -1,24 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
+import { useState } from 'react';
+
 import './App.css';
+import { CountrySection } from './components/CountrySection/CountrySection';
+import { Heading } from './components/Heading/Heading';
+import { useFetch } from './hooks/useFetch';
 
 function App() {
+  const [url, setUrl] = useState<string>('https://restcountries.com/v3.1/all')
+  const { data: countries, isPending, error } = useFetch(url);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Heading />
+      {isPending && <div className='loader-backdrop'>
+        <div className='loader'>
+          Loading trips...
+        </div>
+      </div>}
+      {error && <div>{error}</div>}
+      <CountrySection countries={countries} setUrl={setUrl} />
     </div>
   );
 }
