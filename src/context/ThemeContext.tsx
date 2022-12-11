@@ -2,23 +2,24 @@ import React, { createContext, useReducer } from 'react';
 
 interface IThemeContext {
       darkTheme: boolean,
-      toggleDarkTheme?: () => void
+      error?: any,
+      toggleDarkTheme?: () => void,
+      setError?: (error: any) => any
 }
 
 const defaultState = {
-      darkTheme: false
+      darkTheme: false,
+      error: null,
 }
 
 enum ThemeActionKind {
-      TOGGLE_DARK_THEME = 'TOGGLE_DARK_THEME'
+      TOGGLE_DARK_THEME = 'TOGGLE_DARK_THEME',
+      ADD_ERROR = 'ADD_ERROR'
 }
 
 interface ThemeAction {
       type: ThemeActionKind
-}
-
-interface ThemeState {
-      darkTheme: boolean
+      payload?: any
 }
 
 type ThemeProviderProps = {
@@ -27,11 +28,12 @@ type ThemeProviderProps = {
 
 export const ThemeContext = createContext<IThemeContext>(defaultState);
 
-const themeReducer = (state: ThemeState, action: ThemeAction) => {
+const themeReducer = (state: IThemeContext, action: ThemeAction) => {
       switch (action.type) {
             case ThemeActionKind.TOGGLE_DARK_THEME:
-                  console.log(state.darkTheme);
                   return { ...state, darkTheme: !(state.darkTheme) }
+            case ThemeActionKind.ADD_ERROR:
+                  return { ...state, error: action.payload }
             default:
                   return state
       }
@@ -46,8 +48,12 @@ export function ThemeProvider(props: ThemeProviderProps) {
             dispatch({ type: ThemeActionKind.TOGGLE_DARK_THEME })
       }
 
+      const setError = (error: any) => {
+            dispatch({ type: ThemeActionKind.ADD_ERROR, payload: error })
+      }
+
       return (
-            <ThemeContext.Provider value={{ ...state, toggleDarkTheme }}>
+            <ThemeContext.Provider value={{ ...state, toggleDarkTheme, setError }}>
                   {props.children}
             </ThemeContext.Provider>
       )
