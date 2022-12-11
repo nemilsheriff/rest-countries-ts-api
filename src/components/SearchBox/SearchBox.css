@@ -5,7 +5,14 @@
       width: 100%;
 }
 
+@media all and (min-width: 600px) {
+      .country-search {
+            width: 20rem;
+      }
+}
+
 label {
+      /* margin-top: 2rem; */
       position: relative;
 }
 

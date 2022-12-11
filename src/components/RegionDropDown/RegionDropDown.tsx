@@ -25,7 +25,6 @@ export const RegionDropDown = (props: RegionDropDownProps) => {
                         title="Region Drop Down"
                         name="region"
                         id="region"
-                        defaultValue=''
                         onChange={(e) => updateSearchTerm(e)}
                         value={searchTerm}
                   >
