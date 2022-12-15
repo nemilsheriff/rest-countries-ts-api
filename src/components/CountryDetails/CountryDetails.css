@@ -23,10 +23,39 @@
       margin-right: 0.5rem;
 }
 
-.flag-and-details {
-      display: flex;
-      align-items: flex-start;
+@media all and (max-width: 699px) {
+      .text-details {
+            margin-top: 2rem;
+      }
 }
+
+@media all and (min-width: 700px) {
+      .flag-and-details {
+            /* outline: 1px solid red; */
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            justify-items: start;
+            align-items: start;
+            /* align-items: flex-start; */
+            /* justify-content: space-between; */
+            width: 100%;
+      }
+
+      .flag-image {
+            /* flex-grow: 1; */
+            /* outline: 1px solid green; */
+            width: 35rem;
+            height: auto;
+      }
+
+      .text-details {
+            /* outline: 1px solid blue; */
+            margin-top: 0rem;
+      }
+}
+
+
 
 .country-details-page.dark>.back-button {
       color: white;
@@ -37,7 +66,7 @@
 }
 
 .text-details {
-      margin-top: 2rem;
+      /* margin-top: 2rem; */
       width: 100%;
       line-height: 1.75rem;
 }
