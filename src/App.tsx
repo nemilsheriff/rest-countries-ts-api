@@ -1,24 +1,20 @@
-import { useState } from 'react';
-
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { CountryDetailsPage } from './pages/CountryDetailsPage';
+import { CountryListPage } from './pages/CountryListPage';
 import './App.css';
-import { CountrySection } from './components/CountrySection/CountrySection';
+
 import { Heading } from './components/Heading/Heading';
-import { useFetch } from './hooks/useFetch';
 
 function App() {
-  const [url, setUrl] = useState<string>('https://restcountries.com/v3.1/all')
-  const { data: countries, isPending, error } = useFetch(url);
-
   return (
     <div className="App">
       <Heading />
-      {isPending && <div className='loader-backdrop'>
-        <div className='loader'>
-          Loading trips...
-        </div>
-      </div>}
-      {error && <div>{error}</div>}
-      <CountrySection countries={countries} setUrl={setUrl} />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<CountryListPage />} />
+          <Route path="/countries/:id" element={<CountryDetailsPage />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
