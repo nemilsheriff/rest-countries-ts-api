@@ -1,0 +1,13 @@
+.border-country-name {
+      text-align: center;
+      padding: 0.25rem 0.5rem;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      margin-right: 0.5rem;
+      /* outline: 1px solid red; */
+      display: inline-block;
+      min-width: 7.5rem;
+}
+
+a {
+      cursor: pointer;
+}

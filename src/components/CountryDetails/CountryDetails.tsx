@@ -3,6 +3,7 @@ import { useFetch } from '../../hooks/useFetch';
 import { useState } from 'react';
 import './CountryDetails.css'
 import { useNavigate } from "react-router-dom"
+import { BorderCountry } from '../BorderCountry/BorderCountry';
 
 type CountryDetailsProps = {
       country?: any
@@ -62,12 +63,14 @@ export const CountryDetails = (props: CountryDetailsProps) => {
                               <p><b>Border Countries: </b></p>
                               <div className="borders">
                                     {/* {error && <div>{error}</div>} */}
-                                    {countries ? (countries.map((country: any) => (
-                                          <span key={country.name.common} className='border-country-name'>{country.name.common}</span>
-                                    ))) : (<span key={"NONE"} className='border-country-name'>NONE</span>)}
+                                    {countries ? (countries.map((country: any) => (<BorderCountry country={country} />))) : (<span key={"NONE"} className='border-country-name'>NONE</span>)}
                               </div>
                         </div>
                   </div>
             </div>
       )
 }
+
+// => ( 
+//                                           <span key={country.name.common} className='border-country-name'>{country.name.common}</span>
+//                                     )))
