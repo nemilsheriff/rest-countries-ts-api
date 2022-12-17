@@ -1,17 +1,16 @@
-import './BorderCountry.css'
+import './BorderCountry.css';
+import { Link } from 'react-router-dom';
 
-type CountryItemProps = {
-      country?: any
-}
+type CountryItemProps = { country?: any }
 
 export const BorderCountry = (props: CountryItemProps) => {
       const url = `/countries/${props.country.name.official}`
 
       return (
             <div key={props.country.name.common}>
-                  <a href={url} className='border-country-name' >
+                  <Link className='border-country-name' to={url}>
                         {props.country.name.common}
-                  </a>
+                  </Link>
             </div>
       )
 }

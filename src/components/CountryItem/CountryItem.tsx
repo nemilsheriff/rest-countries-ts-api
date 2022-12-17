@@ -1,6 +1,6 @@
 import './CountryItem.css'
 import { useTheme } from '../../hooks/useTheme';
-import { useNavigate } from "react-router-dom"
+import { Link } from 'react-router-dom';
 
 type CountryItemProps = {
       country?: any
@@ -8,10 +8,9 @@ type CountryItemProps = {
 
 export const CountryItem = (props: CountryItemProps) => {
       const { darkTheme } = useTheme();
-      const navigate = useNavigate();
       const url = `/countries/${props.country.name.official}`
       return (
-            <a onClick={() => navigate(url)}>
+            <Link className='border-country-name' to={url}>
                   <div className={darkTheme ? ("country Dark") : ("country")}>
                         <img src={props.country.flags.png} alt='flag'></img>
                         <div className={darkTheme ? ("country-details Dark") : ("country-details")}>
@@ -21,6 +20,6 @@ export const CountryItem = (props: CountryItemProps) => {
                               <p><b>Capital:</b> {props.country.capital}</p>
                         </div>
                   </div>
-            </a>
+            </Link>
       )
 }

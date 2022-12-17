@@ -2,7 +2,7 @@
       --VeryLightGray: hsl(0, 0%, 98%);
       background-color: var(--VeryLightGray);
       /* outline: 1px solid green; */
-      height: 88vh;
+      /* height: 88vh; */
       padding: 2rem 1rem 2rem 1rem;
 }
 

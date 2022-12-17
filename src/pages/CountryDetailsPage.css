@@ -1,8 +1,14 @@
 .country-details-page-component {
-      height: 100vh;
+      /* height: 100vh; */
       background-color: white;
 }
 
 .country-details-page-component.dark {
       background-color: var(--DarkBlue);
+}
+
+@media all and (min-width: 700px) {
+      .country-details-page-component {
+            height: 100vh;
+      }
 }

@@ -1,9 +1,9 @@
 import { useTheme } from '../../hooks/useTheme';
-import { useFetch } from '../../hooks/useFetch';
 
+import { Link } from 'react-router-dom';
 import './CountryDetails.css'
-import { useNavigate } from "react-router-dom"
-import { BorderCountry } from '../BorderCountry/BorderCountry';
+
+import { BorderCountryList } from '../BorderCountryList/BorderCountryList';
 
 type CountryDetailsProps = {
       country?: any
@@ -14,8 +14,6 @@ export const CountryDetails = (props: CountryDetailsProps) => {
       let currencyNames = [];
       let languages = [];
       let borderCountries = [];
-      const navigate = useNavigate();
-      const home = `/`
 
       for (var prop in props.country.currencies) {
             currencyNames.push(props.country.currencies[prop].name);
@@ -29,14 +27,12 @@ export const CountryDetails = (props: CountryDetailsProps) => {
             borderCountries.push(props.country.borders[prop2]);
       }
 
-      const id = borderCountries.toString();
-      const { data: countries, isPending, error } = useFetch(`https://restcountries.com/v3.1/alpha?codes=${id}`);
-
       return (
             <div className={darkTheme ? ("country-details-page dark") : ("country-details-page")}>
-                  <a href={'/'} className='back-button' onClick={() => navigate(home)}>
+                  <Link to="/" className='back-button'>
                         <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path d="m12 20-8-8 8-8 1.425 1.4-5.6 5.6H20v2H7.825l5.6 5.6Z" /></svg>
-                        Back</a>
+                        Back
+                  </Link>
                   <div className="flag-and-details">
                         <img className='flag-image' src={props.country.flags.png} alt='flag'></img>
                         <div className="text-details">
@@ -61,21 +57,7 @@ export const CountryDetails = (props: CountryDetailsProps) => {
                                     ))}
                               </p>
                               <p><b>Border Countries: </b></p>
-                              <div className="borders">
-                                    {/* {error && <div>{error}</div>} */}
-                                    {isPending && <div className='loader-backdrop'>
-                                          <div className='loader'>
-                                                Loading Information...
-                                          </div>
-                                    </div>}
-                                    {error && error ? (<span className='border-country-name'>NONE</span>)
-                                          : countries && countries ? (countries.map((country: any) => (
-                                                <span key={country.name.common} >
-                                                      <BorderCountry country={country} />
-
-                                                </span>))) :
-                                                (<span className='border-country-name'>NONE</span>)}
-                              </div>
+                              <BorderCountryList borderCountries={borderCountries} />
                         </div>
                   </div>
             </div>

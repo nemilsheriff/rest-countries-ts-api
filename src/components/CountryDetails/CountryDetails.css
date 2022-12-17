@@ -27,49 +27,27 @@
       .text-details {
             margin-top: 2rem;
       }
-
-      .borders {
-            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-            row-gap: 0.5rem;
-      }
 }
 
 @media all and (min-width: 700px) {
       .flag-and-details {
-            /* outline: 1px solid red; */
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 2rem;
             justify-items: start;
             align-items: start;
-            /* align-items: flex-start; */
-            /* justify-content: space-between; */
             width: 100%;
       }
 
       .flag-image {
-            /* flex-grow: 1; */
-            /* outline: 1px solid green; */
             width: 35rem;
             height: auto;
       }
 
       .text-details {
-            /* outline: 1px solid blue; */
             margin-top: 0rem;
       }
-
-      .borders {
-            /* outline: 1px solid red; */
-            padding: 0.25rem 1rem;
-            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-            gap: 0.75rem;
-            column-gap: 1rem;
-            /* row-gap: 0.5rem; */
-      }
 }
-
-
 
 .country-details-page.dark>.back-button {
       color: white;
@@ -96,16 +74,4 @@
 .currency-name~.currency-name::before,
 .language-name~.language-name::before {
       content: ', ';
-}
-
-.borders {
-      margin-top: 0.5rem;
-      display: grid;
-}
-
-.border-country-name {
-      text-align: center;
-      padding: 0.25rem;
-      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-      margin-right: 0.5rem;
 }

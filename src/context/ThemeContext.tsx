@@ -31,6 +31,7 @@ export const ThemeContext = createContext<IThemeContext>(defaultState);
 const themeReducer = (state: IThemeContext, action: ThemeAction) => {
       switch (action.type) {
             case ThemeActionKind.TOGGLE_DARK_THEME:
+                  // console.log('TOGGLE DARK THEME!')
                   return { ...state, darkTheme: !(state.darkTheme) }
             case ThemeActionKind.ADD_ERROR:
                   return { ...state, error: action.payload }
