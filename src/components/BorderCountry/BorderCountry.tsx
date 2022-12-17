@@ -9,10 +9,16 @@ type CountryItemProps = {
 export const BorderCountry = (props: CountryItemProps) => {
       const { darkTheme } = useTheme();
       const navigate = useNavigate();
+      // console.log(props.country);
       const url = `/countries/${props.country.name.official}`
+      // const url = `/countries/${props.country.name.official}`
       return (
-            <a onClick={() => navigate(url)} className='border-country-name' key={props.country.name.common}>
-                  {props.country.name.common}
-            </a>
+            <div key={props.country.name.common}>
+                  <a onClick={() => navigate(url)} className='border-country-name' >
+                        {props.country.name.common}
+                  </a>
+            </div>
       )
 }
+
+// <a onClick={() => navigate(url)}>

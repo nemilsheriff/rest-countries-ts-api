@@ -13,7 +13,7 @@ export const CountryDetailsPage = () => {
 
       if (Array.isArray(countries)) {
             const country = countries[0];
-            console.log(country);
+            // console.log(country);
 
             return (
                   <div className={darkTheme ? ('country-details-page-component dark') : ('country-details-page-component')}>

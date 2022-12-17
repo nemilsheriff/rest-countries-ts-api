@@ -63,7 +63,12 @@ export const CountryDetails = (props: CountryDetailsProps) => {
                               <p><b>Border Countries: </b></p>
                               <div className="borders">
                                     {/* {error && <div>{error}</div>} */}
-                                    {countries ? (countries.map((country: any) => (<BorderCountry country={country} />))) : (<span key={"NONE"} className='border-country-name'>NONE</span>)}
+                                    {countries ? (countries.map((country: any) => (
+                                          <span key={country.name.common} >
+                                                <BorderCountry country={country} />
+
+                                          </span>))) :
+                                          (<span className='border-country-name'>NONE</span>)}
                               </div>
                         </div>
                   </div>
@@ -74,3 +79,8 @@ export const CountryDetails = (props: CountryDetailsProps) => {
 // => ( 
 //                                           <span key={country.name.common} className='border-country-name'>{country.name.common}</span>
 //                                     )))
+// (<BorderCountry country={country} />)))
+
+{/* <a onClick={() => navigate(`/countries/${country.name.official}`)} className='border-country-name' >
+                                                      {country.name.common}
+                                                </a> */}
