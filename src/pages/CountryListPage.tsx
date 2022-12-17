@@ -9,7 +9,7 @@ export const CountryListPage = () => {
             <div>
                   {isPending && <div className='loader-backdrop'>
                         <div className='loader'>
-                              Loading Countries...
+                              Loading Information...
                         </div>
                   </div>}
                   {error && <div>{error}</div>}

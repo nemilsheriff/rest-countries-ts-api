@@ -41,7 +41,7 @@ const themeReducer = (state: IThemeContext, action: ThemeAction) => {
 
 export function ThemeProvider(props: ThemeProviderProps) {
       const [state, dispatch] = useReducer(themeReducer, {
-            darkTheme: false
+            darkTheme: true
       })
 
       const toggleDarkTheme = () => {
