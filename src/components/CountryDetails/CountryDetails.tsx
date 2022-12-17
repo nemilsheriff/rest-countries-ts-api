@@ -1,6 +1,6 @@
 import { useTheme } from '../../hooks/useTheme';
 import { useFetch } from '../../hooks/useFetch';
-// import { useState } from 'react';
+
 import './CountryDetails.css'
 import { useNavigate } from "react-router-dom"
 import { BorderCountry } from '../BorderCountry/BorderCountry';
@@ -30,8 +30,6 @@ export const CountryDetails = (props: CountryDetailsProps) => {
       }
 
       const id = borderCountries.toString();
-      // const [url, setUrl] = useState<string>(`https://restcountries.com/v3.1/alpha?codes=${id}`)
-      // const { data: countries, isPending, error } = useFetch(url);
       const { data: countries, isPending, error } = useFetch(`https://restcountries.com/v3.1/alpha?codes=${id}`);
 
       return (

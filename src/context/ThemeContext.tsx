@@ -8,7 +8,7 @@ interface IThemeContext {
 }
 
 const defaultState = {
-      darkTheme: false,
+      darkTheme: true,
       error: null,
 }
 
@@ -40,17 +40,11 @@ const themeReducer = (state: IThemeContext, action: ThemeAction) => {
 }
 
 export function ThemeProvider(props: ThemeProviderProps) {
-      const [state, dispatch] = useReducer(themeReducer, {
-            darkTheme: true
-      })
+      const [state, dispatch] = useReducer(themeReducer, defaultState)
 
-      const toggleDarkTheme = () => {
-            dispatch({ type: ThemeActionKind.TOGGLE_DARK_THEME })
-      }
+      const toggleDarkTheme = () => { dispatch({ type: ThemeActionKind.TOGGLE_DARK_THEME }) }
 
-      const setError = (error: any) => {
-            dispatch({ type: ThemeActionKind.ADD_ERROR, payload: error })
-      }
+      const setError = (error: any) => { dispatch({ type: ThemeActionKind.ADD_ERROR, payload: error }) }
 
       return (
             <ThemeContext.Provider value={{ ...state, toggleDarkTheme, setError }}>
