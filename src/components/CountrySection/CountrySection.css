@@ -1,6 +1,7 @@
 .country-section {
       --VeryLightGray: hsl(0, 0%, 98%);
       background-color: var(--VeryLightGray);
+      min-height: 100vh;
       /* outline: 1px solid green; */
       /* height: 88vh; */
       padding: 2rem 1rem 2rem 1rem;
